@@ -39,8 +39,6 @@ def get_posts(
         .all()
     )
 
-    print(type(results))
-
     return results
 
 
