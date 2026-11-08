@@ -28,7 +28,7 @@ def get_db():
 #             host="localhost",
 #             database="fastapi",
 #             user="postgres",
-#             password="Camotecamotazo180.",
+#             password="",
 #             row_factory=dict_row,
 #         )
 #         cursor = conn.cursor()
