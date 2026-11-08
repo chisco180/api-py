@@ -1,0 +1,16 @@
+[Unit]
+Description=demo fastapi application
+After=network.target
+
+[Service]
+User=chisco180-fastapi
+Group=chisco180-fastapi
+WorkingDirectory=/home/chisco180-fastapi/app/src
+Environment="PATH=/home/chisco180-fastapi/app/src/.venv/bin"
+EnvironmentFile=/home/chisco180-fastapi/.env
+ExecStart=/home/chisco180-fastapi/app/src/.venv/bin/gunicorn -w 4 -k uvicorn_worker.UvicornWorker app.main:app --bind 0.0.0.0:8000
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
